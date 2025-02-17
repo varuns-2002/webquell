@@ -1,0 +1,30 @@
+{
+  "builds": [
+    {
+      "src": "html/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/privacy-policy",
+      "dest": "/html/privacy-policy.html"
+    },
+    {
+      "src": "/terms-and-conditions",
+      "dest": "/html/terms-and-condition.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/html/index.html"
+    }
+  ]
+}
