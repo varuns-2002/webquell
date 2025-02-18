@@ -2246,3 +2246,15 @@ a.text-dark:hover, a.text-dark:focus {
 .owl-carousel button.owl-dot.active {
   background-color: #6C55F9;
 }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse .ml-auto {
+    margin: 1rem 0;
+  }
+  
+  .navbar-collapse .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
