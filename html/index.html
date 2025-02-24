@@ -9,6 +9,7 @@
 
 
   <title>Webquell</title>
+  <link rel="icon" type="image/png" href="../assets/img/webquell-logo.png">
 
 <link rel="stylesheet" href="/assets/vendor/animate/animate.css">
 
@@ -479,18 +480,16 @@
 
             <form id="contactForm" action="#">
               <div class="py-2">
-                <input type="text" class="form-control" placeholder="Full name">
+                <input type="text" name="name" class="form-control" placeholder="Full name">
               </div>
               <div class="py-2">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" name="email" class="form-control" placeholder="Email">
               </div>
-
               <div class="py-2">
-                <input type="tel" class="form-control" placeholder="Phone Number">
+                <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
               </div>
-              
               <div class="py-2">
-                <textarea rows="6" class="form-control" placeholder="Enter message"></textarea>
+                <textarea rows="6" name="message" class="form-control" placeholder="Enter message"></textarea>
               </div>
               <button type="submit" class="btn btn-primary rounded-pill mt-4">Send Message</button>
             </form>
@@ -713,48 +712,64 @@
 
 <script>
   // Function to handle form submission
-  function handleFormSubmit(formId, endpoint) {
+  function handleFormSubmit(formId, endpoint, formType) {
     document.getElementById(formId).addEventListener("submit", function (event) {
       event.preventDefault();
 
       const form = event.target;
       const formData = new FormData(form);
-      const formObject = {};
+      const formObject = { type: formType }; // Add form type (contact or subscribe)
 
       // Convert FormData to JSON
       formData.forEach((value, key) => {
         formObject[key] = value;
       });
 
+      console.log("Form Data:", formObject); // Debugging: Log form data
+
       // Send data to Google Apps Script
       fetch(endpoint, {
         method: "POST",
         body: JSON.stringify(formObject),
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "text/plain;charset=utf-8", // Match your Google Apps Script
         },
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
         .then((data) => {
+          console.log("Response Data:", data); // Debugging: Log response data
           if (data.status === "success") {
-            alert(data.message);
+            alert(data.message); // Show success message
             form.reset(); // Reset the form
           } else {
-            alert("There was an error. Please try again.");
+            alert("There was an error. Please try again."); // Show error message
           }
         })
         .catch((error) => {
-          console.error("Error:", error);
-          alert("There was an error. Please try again.");
+          console.error("Error:", error); // Debugging: Log error
+          alert("There was an error. Please try again."); // Show error message
         });
     });
   }
 
   // Handle Contact Us form
-  handleFormSubmit("contactForm", "https://script.google.com/macros/s/AKfycbwMJVkJroRs0zv9lj-_rNKWTZM0fOHdCWfnLDfdaC7nttyK8I46YGfR_8U5hvh1fn-OIw/exec");
+  handleFormSubmit(
+    "contactForm",
+    "https://script.google.com/macros/s/AKfycbx-iaAWm5hK3W-0F7QeVFxVL1iIxQ1JKnIh3xqYX3m3zbkIXbJPRvF2m4YtsKdwV4dGHQ/exec",
+    "contact"
+  );
 
   // Handle Subscribe form
-  handleFormSubmit("subscribeForm", "https://script.google.com/macros/s/AKfycbwMJVkJroRs0zv9lj-_rNKWTZM0fOHdCWfnLDfdaC7nttyK8I46YGfR_8U5hvh1fn-OIw/exec");
+  handleFormSubmit(
+    "subscribeForm",
+    "https://script.google.com/macros/s/AKfycbx-iaAWm5hK3W-0F7QeVFxVL1iIxQ1JKnIh3xqYX3m3zbkIXbJPRvF2m4YtsKdwV4dGHQ/exec",
+    "subscribe"
+  );
 </script>
 
 </html>
