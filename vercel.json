@@ -5,11 +5,11 @@
       "use": "@vercel/static"
     },
     {
-      "src": "html/**/*",
+      "src": "html//*",
       "use": "@vercel/static"
     },
     {
-      "src": "assets/**/*",
+      "src": "assets//*",
       "use": "@vercel/static"
     }
   ],
