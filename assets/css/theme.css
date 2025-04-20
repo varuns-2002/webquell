@@ -679,6 +679,19 @@ a.text-dark:hover, a.text-dark:focus {
   border-color: transparent;
 }
 
+<<<<<<< HEAD
+=======
+.meeting-btn {
+  background-color: #4E46E5;
+  border-color: #4E46E5;
+}
+
+.meeting-btn:hover {
+  background-color: #3d36c7;
+  border-color: #3d36c7;
+}
+
+>>>>>>> 2db2472225acf603844d64de52c439cb151dee31
 .btn-primary:focus, .btn-primary.focus,
 .btn-accent:focus, .btn-accent.focus,
 .btn-secondary:focus, .btn-secondary.focus,

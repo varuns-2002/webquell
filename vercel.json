@@ -5,11 +5,19 @@
       "use": "@vercel/static"
     },
     {
+<<<<<<< HEAD
       "src": "html//*",
       "use": "@vercel/static"
     },
     {
       "src": "assets//*",
+=======
+      "src": "html/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**/*",
+>>>>>>> 2db2472225acf603844d64de52c439cb151dee31
       "use": "@vercel/static"
     }
   ],
@@ -35,4 +43,8 @@
       "dest": "/html/index.html"
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2db2472225acf603844d64de52c439cb151dee31
