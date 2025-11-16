@@ -62,12 +62,12 @@
   <!-- Back to top button -->   
   <div class="back-to-top"></div>
 
-  <header>
+ <header>
     <nav class="navbar navbar-expand-lg navbar-light navbar-float">
       <div class="container">
-        <!-- <a href="index.html" class="navbar-brand">Web<span class="text-primary">quell</span></a> -->
-        <a href="index.html" class="navbar-brand"><img style="border-radius: 8px;" src="../assets/img/logo.png"
-            height="65px" width="70px" alt=""></a>
+        <a href="/" class="navbar-brand">
+          <img style="border-radius: 8px;" src="../assets/img/logo.png" height="65px" width="70px" alt="">
+        </a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -77,22 +77,47 @@
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
             <li class="nav-item active">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="/" class="nav-link">Home</a>
             </li>
-            
+            <li class="nav-item">
+              <a href="#about-us" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#services" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
           </ul>
-
-          <div style="margin-right: 8px;" class="ml-auto">
-            <!-- <a href="tel:+91 9555171506" class="btn btn-outline rounded-pill">Call us </a></div> -->
+          
+          <div class="nav-buttons-container d-flex flex-column flex-lg-row w-100">
+            <div class="nav-button-item w-15 mb-2 mb-lg-0 ml-lg-auto mr-lg-2">
+              <!-- <a href="tel:+91 9555171506" class="btn btn-outline rounded-pill w-100">Call us</a> -->
+            </div>
+            <div class="nav-button-item w-15">
+              <a href="mailto:contact@webquell.com" class="btn btn-outline rounded-pill w-100">Mail us</a>
+            </div>
+          </div>
         </div>
-
-        <div class="ml-auto">
-          <a href="mailto:enquiry@flykontinent.in" class="btn btn-outline rounded-pill">Mail us </a></div>
-      </div>
-      </div>
+      </div>  
     </nav>
 
-    
+    <div class="page-banner home-banner">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-lg-6 py-3 wow fadeInUp">
+            <!-- <h1 class="mb-4">Great Companies are built on great Products</h1>
+            <p class="text-lg mb-5">Ignite the most powerfull growth engine you have ever built for your company</p> -->
+
+          </div>
+          <div class="col-lg-6 py-3 wow zoomIn">
+            <div class="img-place">
+              <!-- <img src="../assets/img/bg1.jpg" alt=""> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   
@@ -165,7 +190,7 @@
         <div>
           <h5 class="text-lg font-bold mb-4">Quick Links</h5>
           <ul class="space-y-2">
-            <li><a href="#whyChooseUs" class="text-gray-400 hover:text-white">Why choose us?</a></li>
+            <li><a href="https://www.webquell.com/index.html#whyChooseUs" class="text-gray-400 hover:text-white">Why choose us?</a></li>
             <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
             <li><a href="terms-and-conditions.html" class="text-gray-400 hover:text-white">Terms & conditions</a></li>
           </ul>
